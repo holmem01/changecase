@@ -1,0 +1,13 @@
+#!/bin/bash
+
+changeupper < $1 > $2
+
+show_usage() {
+        echo -e "Usage: changeupper reads a file and copies it using only lowercase letters"
+}
+
+if [ $# -lt 2 ]
+then
+        show_usage
+        exit 1
+fi
