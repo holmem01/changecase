@@ -1,11 +1,13 @@
-all: changecase.o isupper.o
-        cc -o changeupper changecase.o isupper.o
+CFLAGS	= -g -fno-builtin
 
-changecase.o: changecase.c isupper.h
-        cc -c isupper.c
+all:	changecase.o isupper.o
+	cc $(CFLAGS) -o changeupper changecase.o isupper.o
 
-isupper.o: isupper.c isupper.h
-        cc -c everyother.c
+changecase.o: 	changecase.c isupper.h
+	cc $(CFLAGS) -c changecase.c
+
+isupper.o: 	isupper.c isupper.h
+	cc $(CFLAGS) -c isupper.c
 clean:
-        rm *.o
-        rm changeupper
+	rm *.o
+	rm changeupper

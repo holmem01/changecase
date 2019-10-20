@@ -1,7 +1,7 @@
 #ifndef isupper_h
 #define isupper_h
 
-int isupper(char c);
+extern int isupper(char c);
 
 
 
